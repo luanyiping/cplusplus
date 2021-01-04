@@ -36,14 +36,25 @@ public:
 	{
 		return m_l * m_w * m_h;
 	}
-
+	//利用成员函数判断两个立方体是否相等
+	bool issamebyclass(cube c)
+	{
+		if (m_l== c.getl() && m_h== c.geth() && m_w == c.getw())
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
 private:
 	int m_l;
 	int m_w;
 	int m_h;
 };
 //利用全局函数判断两个立方体是否相等
-bool issame(cube c1, cube c2)
+bool issame(cube c1 , cube c2)
 {
 	if (c1.getl() == c2.getl() && c1.geth() == c2.geth() && c1.getw() == c2.getw())
 	{
@@ -62,10 +73,19 @@ int main()
 	c1.seth(10);
 	c2.setl(10);
 	c2.setv(10);
-	c2.seth(10);
+	c2.seth(11);
 	cout << "c1的面积为: " << c1.calculates() << endl;
 	cout << "c1的体积为: " << c1.calculatev() << endl;
 	bool ret = issame(c1, c2);
+	if (ret)
+	{
+		cout << "yes" << endl;
+	}
+	else
+	{
+		cout << "no" << endl;
+	}
+	ret = c1.issamebyclass(c2);
 	if (ret)
 	{
 		cout << "yes" << endl;
