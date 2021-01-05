@@ -37,7 +37,7 @@ void test01()
 	for_each(v.begin(), v.end(), myprint);
 
 }
-int main()
+int main5()
 {
 	test01();
 }
